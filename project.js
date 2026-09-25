@@ -2,9 +2,30 @@ const prompt = require('prompt-sync')();
 
 let candidats = [];
 
+function ajouterCandidat() {
+    let cin = prompt("entre cin de condidat : ")
+    let nom = prompt("entre nom  de candidat : ")
+    let prenom = prompt("entre prenom de candidat : ")
+    let age = prompt("entre age de candidat : ")
+    let partiPolitique = prompt("entre partiPolitique : ")
 
-    console.log(`
-========================================
+    let candidat = {
+        cin: cin,
+        nom: nom,
+        prenom: prenom,
+        age: age,
+        partiPolitique: partiPolitique,
+        electeurs: []
+    }
+
+
+
+
+
+} 
+
+console.log(`
+=======================================
  GESTION DES ÉLECTIONS - MENU PRINCIPAL
 ========================================
 1. Ajouter un nouveau candidat
@@ -16,8 +37,7 @@ let candidats = [];
 7. Rechercher un candidat par nom
 8. Afficher les statistiques de l'élection
 9. Quitter
-========================================`);
-
+`);
 
 
 let choix;
@@ -26,37 +46,46 @@ do {
     choix = prompt('Votre choix : ');
 
         switch (choix) {
-            case '1':
+    case '1':
                 ajouterCandidat();
                 break;
-            case '2':
+    case '2':
                 ajouterPlusieursCandidats();
                 break;
-            case '3':
+    case '3':
                 afficherListeCandidats();
                 break;
-            case '4':
+    case '4':
                 voterPourCandidat();
                 break;
-            case '5':
+    case '5':
                 modifierCandidat();
                 break;
-            case '6':
+    case '6':
                 supprimerCandidat();
                 break;
-            case '7':
+    case '7':
                 rechercherCandidat();
                 break;
-            case '8':
+    case '8':
                 afficherStatistiques();
                 break;
-            case '9':
+    case '9':
                 console.log('Au revoir !');
                 break;
-            default:
+           
+    default:
                 console.log('Choix invalide, réessayez.');
         }
 
-       
-
 } while (choix !== '9');
+
+
+
+
+
+
+
+
+
+
