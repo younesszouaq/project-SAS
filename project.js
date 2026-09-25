@@ -3,21 +3,22 @@ const prompt = require('prompt-sync')();
 let candidats = [];
 
 function ajouterCandidat() {
-    let cin = prompt("entre cin de condidat : ")
-    let nom = prompt("entre nom  de candidat : ")
-    let prenom = prompt("entre prenom de candidat : ")
-    let age = prompt("entre age de candidat : ")
-    let partiPolitique = prompt("entre partiPolitique : ")
+    let cin = prompt("entrez un cin")
+    let nom = prompt("entrez un nom")
+    let prenom = prompt("entre un prenom")
+    let partipolitique = prompt("entre un partipolitique")
+    let age =Number(prompt("entre un age"))
 
-    let candidat = {
-        cin: cin,
-        nom: nom,
-        prenom: prenom,
-        age: age,
-        partiPolitique: partiPolitique,
-        electeurs: []
+
+    let condida = {
+        cin : cin,
+        nom : nom,
+        prenom : prenom,
+        partipolitique : partipolitique,
+        age : age, 
+        electeure : []
+
     }
-
 
 
 
