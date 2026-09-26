@@ -3,30 +3,59 @@ const prompt = require('prompt-sync')();
 let candidats = [];
 
 function ajouterCandidat() {
-    let cin = prompt("entrez un cin")
-    let nom = prompt("entrez un nom")
-    let prenom = prompt("entre un prenom")
-    let partipolitique = prompt("entre un partipolitique")
-    let age =Number(prompt("entre un age"))
+    let cin = prompt("entre un cin : ")
+    let nom = prompt("entre un nom : ")
+    let prenom = prompt("entre un prenom : ")
+    let partipolitique = prompt("entre un partipolitique : ")
+    let age =Number(prompt("entre un age : "))
 
 
-    let condida = {
+    let condidats = {
         cin : cin,
         nom : nom,
         prenom : prenom,
         partipolitique : partipolitique,
         age : age, 
-        electeure : []
+        electeures : []
 
-    }
-
-
-
+ }
+candidats.push(condidats);
+console.log("Candidat ajouté avec succès !");
 
 } 
+ 
+
+function ajouterPlusieursCandidats(){
+    let nombre = Number(prompt("Combien de candidats voulez-vous ajouter ? "));
+    for (let i = 0; i < nombre; i++) {
+        console.log(`Candidat ${i + 1}`);
+        ajouterCandidat();
+}
+}
+
+function afficherListeCandidats(){
+   
+    for (let i = 0; i < candidats.length; i++) {
+        console.log(candidats[i]);
+}
+
+}
+
+function voterPourCandidat() {
+   let cinElecteur = prompt("entre un cin : ");
+   for(let i = 0; i < candidats.length; i++) {
+    
+    if (candidats[i].electeures.includes(cinElecteur)){
+        console.log("Vous avez déjà voté !");
+    return;
+}
+}
+   let cinCandidat = prompt("entre la CIN du candidat : ");
+
+}
 
 console.log(`
-=======================================
+========================================
  GESTION DES ÉLECTIONS - MENU PRINCIPAL
 ========================================
 1. Ajouter un nouveau candidat
@@ -79,9 +108,9 @@ do {
                 console.log('Choix invalide, réessayez.');
         }
 
-} while (choix !== '9');
-
-
+ 
+ 
+    } while (choix !== '9');
 
 
 
